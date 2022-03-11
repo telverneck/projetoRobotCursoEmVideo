@@ -1,110 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20220311 09:54:56.732" rpa="false" schemaversion="2">
-<suite id="s1" name="homeTest" source="C:\RobotFramework\projetoRobotCursoEmVideo\Tests\homeTest.robot">
+<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20220311 14:28:22.920" rpa="false" schemaversion="2">
+<suite id="s1" name="navigationTest" source="C:\RobotFramework\projetoRobotCursoEmVideo\Tests\navigationTest.robot">
 <kw name="Start Session" library="base" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220311 09:54:56.961" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20220311 09:54:56.961" endtime="20220311 09:54:58.279"/>
+<msg timestamp="20220311 14:28:23.190" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220311 14:28:23.190" endtime="20220311 14:28:24.499"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220311 09:54:58.280" level="INFO">Opening url 'https://www.cursoemvideo.com'</msg>
-<status status="PASS" starttime="20220311 09:54:58.280" endtime="20220311 09:55:03.927"/>
+<msg timestamp="20220311 14:28:24.499" level="INFO">Opening url 'https://www.cursoemvideo.com'</msg>
+<status status="PASS" starttime="20220311 14:28:24.499" endtime="20220311 14:28:29.087"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>${WIDTH}</arg>
 <arg>${HEIGHT}</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20220311 09:55:03.927" endtime="20220311 09:55:04.045"/>
+<status status="PASS" starttime="20220311 14:28:29.088" endtime="20220311 14:28:29.218"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220311 09:55:04.045" endtime="20220311 09:55:04.046"/>
+<status status="PASS" starttime="20220311 14:28:29.219" endtime="20220311 14:28:29.221"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20220311 09:55:04.046" endtime="20220311 09:55:04.047"/>
+<status status="PASS" starttime="20220311 14:28:29.221" endtime="20220311 14:28:29.222"/>
 </kw>
-<kw name="accept cookie" library="commonPage">
+<kw name="Accept Cookie" library="commonPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=${cookieAcceptButton}</arg>
 <arg>modifier=False</arg>
 <arg>action_chain=False</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220311 09:55:04.048" level="INFO">Clicking element 'id:cn-accept-cookie'.</msg>
-<status status="PASS" starttime="20220311 09:55:04.047" endtime="20220311 09:55:04.092"/>
+<msg timestamp="20220311 14:28:29.224" level="INFO">Clicking element 'id:cn-accept-cookie'.</msg>
+<status status="PASS" starttime="20220311 14:28:29.223" endtime="20220311 14:28:29.284"/>
 </kw>
-<status status="PASS" starttime="20220311 09:55:04.047" endtime="20220311 09:55:04.092"/>
+<status status="PASS" starttime="20220311 14:28:29.223" endtime="20220311 14:28:29.284"/>
 </kw>
-<status status="PASS" starttime="20220311 09:54:56.960" endtime="20220311 09:55:04.092"/>
+<status status="PASS" starttime="20220311 14:28:23.189" endtime="20220311 14:28:29.285"/>
 </kw>
-<test id="s1-t1" name="Scenario2: check home page buttons">
-<kw name="When clico no botão &quot;Quero ser um Apoiador!&quot;" library="commonPage" sourcename="clico no botão &quot;${buttonText}&quot;">
+<test id="s1-t1" name="Scenario1: Navigation Test">
+<kw name="Acessar menu" library="navigationPage">
+<arg>Cursos</arg>
+<arg>Cursos</arg>
+<kw name="When clico na opção do menu &quot;${menuOption}&quot;" library="navigationPage" sourcename="clico na opção do menu &quot;${menuOption}&quot;">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=link:${buttonText}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220311 09:55:04.094" endtime="20220311 09:55:04.158"/>
+<status status="PASS" starttime="20220311 14:28:29.288" endtime="20220311 14:28:29.327"/>
 </kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>link:${buttonText}</arg>
-<arg>modifier=False</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20220311 09:55:04.159" level="INFO">Clicking link 'link:Quero ser um Apoiador!'.</msg>
-<status status="PASS" starttime="20220311 09:55:04.158" endtime="20220311 09:56:45.870"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220311 14:28:29.328" level="INFO">Clicking element 'xpath://nav//ul[@id='menu-primary-menu']//span[@class='menu-item-text'][contains(text(), 'Cursos')]'.</msg>
+<status status="PASS" starttime="20220311 14:28:29.328" endtime="20220311 14:28:33.560"/>
 </kw>
-<status status="PASS" starttime="20220311 09:55:04.093" endtime="20220311 09:56:45.870"/>
+<status status="PASS" starttime="20220311 14:28:29.287" endtime="20220311 14:28:33.560"/>
 </kw>
-<kw name="Then sou encaminhado para a pagina &quot;Apoie&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<kw name="Then sou encaminhado para a pagina &quot;${textToCheck}&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
 <kw name="confirmo que o texto &quot;${text}&quot; esta presente" library="commonPage" sourcename="confirmo que o texto &quot;${text}&quot; esta presente">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${text}</arg>
 <arg>timeout=None</arg>
 <arg>error=None</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220311 09:56:45.874" endtime="20220311 09:56:45.899"/>
+<status status="PASS" starttime="20220311 14:28:33.562" endtime="20220311 14:28:33.588"/>
 </kw>
-<status status="PASS" starttime="20220311 09:56:45.873" endtime="20220311 09:56:45.899"/>
+<status status="PASS" starttime="20220311 14:28:33.561" endtime="20220311 14:28:33.588"/>
 </kw>
-<status status="PASS" starttime="20220311 09:56:45.872" endtime="20220311 09:56:45.899"/>
+<status status="PASS" starttime="20220311 14:28:33.560" endtime="20220311 14:28:33.589"/>
 </kw>
-<tag>doing</tag>
-<status status="PASS" starttime="20220311 09:55:04.092" endtime="20220311 09:56:45.900"/>
+<status status="PASS" starttime="20220311 14:28:29.286" endtime="20220311 14:28:33.589"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:29.285" endtime="20220311 14:28:33.589"/>
+</test>
+<test id="s1-t2" name="Scenario1: Navigation Test">
+<kw name="Acessar menu" library="navigationPage">
+<arg>Sobre</arg>
+<arg>Sobre</arg>
+<kw name="When clico na opção do menu &quot;${menuOption}&quot;" library="navigationPage" sourcename="clico na opção do menu &quot;${menuOption}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220311 14:28:33.596" endtime="20220311 14:28:33.630"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220311 14:28:33.631" level="INFO">Clicking element 'xpath://nav//ul[@id='menu-primary-menu']//span[@class='menu-item-text'][contains(text(), 'Sobre')]'.</msg>
+<status status="PASS" starttime="20220311 14:28:33.631" endtime="20220311 14:28:33.725"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:33.595" endtime="20220311 14:28:33.725"/>
+</kw>
+<kw name="Then sou encaminhado para a pagina &quot;${textToCheck}&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<kw name="confirmo que o texto &quot;${text}&quot; esta presente" library="commonPage" sourcename="confirmo que o texto &quot;${text}&quot; esta presente">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>timeout=None</arg>
+<arg>error=None</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220311 14:28:33.728" endtime="20220311 14:28:33.971"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:33.727" endtime="20220311 14:28:33.971"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:33.726" endtime="20220311 14:28:33.972"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:33.593" endtime="20220311 14:28:33.972"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:33.592" endtime="20220311 14:28:33.973"/>
+</test>
+<test id="s1-t3" name="Scenario1: Navigation Test">
+<kw name="Acessar menu" library="navigationPage">
+<arg>Seja um apoiador</arg>
+<arg>Apoie</arg>
+<kw name="When clico na opção do menu &quot;${menuOption}&quot;" library="navigationPage" sourcename="clico na opção do menu &quot;${menuOption}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220311 14:28:33.994" endtime="20220311 14:28:34.253"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220311 14:28:34.254" level="INFO">Clicking element 'xpath://nav//ul[@id='menu-primary-menu']//span[@class='menu-item-text'][contains(text(), 'Seja um apoiador')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220311 14:28:38.690" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-89.png"&gt;&lt;img src="selenium-screenshot-89.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220311 14:28:38.361" endtime="20220311 14:28:38.690"/>
+</kw>
+<msg timestamp="20220311 14:28:38.695" level="FAIL">StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=99.0.4844.51)
+</msg>
+<status status="FAIL" starttime="20220311 14:28:34.253" endtime="20220311 14:28:38.695"/>
+</kw>
+<status status="FAIL" starttime="20220311 14:28:33.993" endtime="20220311 14:28:38.696"/>
+</kw>
+<kw name="Then sou encaminhado para a pagina &quot;${textToCheck}&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<status status="NOT RUN" starttime="20220311 14:28:38.696" endtime="20220311 14:28:38.696"/>
+</kw>
+<status status="FAIL" starttime="20220311 14:28:33.992" endtime="20220311 14:28:38.697"/>
+</kw>
+<status status="FAIL" starttime="20220311 14:28:33.991" endtime="20220311 14:28:38.698">StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=99.0.4844.51)
+</status>
+</test>
+<test id="s1-t4" name="Scenario1: Navigation Test">
+<kw name="Acessar menu" library="navigationPage">
+<arg>Login</arg>
+<arg>Entrar</arg>
+<kw name="When clico na opção do menu &quot;${menuOption}&quot;" library="navigationPage" sourcename="clico na opção do menu &quot;${menuOption}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220311 14:28:38.704" endtime="20220311 14:28:38.791"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220311 14:28:38.792" level="INFO">Clicking element 'xpath://nav//ul[@id='menu-primary-menu']//span[@class='menu-item-text'][contains(text(), 'Login')]'.</msg>
+<status status="PASS" starttime="20220311 14:28:38.791" endtime="20220311 14:28:43.809"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:38.703" endtime="20220311 14:28:43.809"/>
+</kw>
+<kw name="Then sou encaminhado para a pagina &quot;${textToCheck}&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<kw name="confirmo que o texto &quot;${text}&quot; esta presente" library="commonPage" sourcename="confirmo que o texto &quot;${text}&quot; esta presente">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>timeout=None</arg>
+<arg>error=None</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220311 14:28:43.811" endtime="20220311 14:28:43.830"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:43.810" endtime="20220311 14:28:43.830"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:43.810" endtime="20220311 14:28:43.830"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:38.702" endtime="20220311 14:28:43.830"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:38.701" endtime="20220311 14:28:43.831"/>
+</test>
+<test id="s1-t5" name="Scenario1: Navigation Test">
+<kw name="Acessar menu" library="navigationPage">
+<arg>Cadastre-se</arg>
+<arg>Matrícula Grátis</arg>
+<kw name="When clico na opção do menu &quot;${menuOption}&quot;" library="navigationPage" sourcename="clico na opção do menu &quot;${menuOption}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220311 14:28:43.835" endtime="20220311 14:28:43.860"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220311 14:28:43.861" level="INFO">Clicking element 'xpath://nav//ul[@id='menu-primary-menu']//span[@class='menu-item-text'][contains(text(), 'Cadastre-se')]'.</msg>
+<status status="PASS" starttime="20220311 14:28:43.861" endtime="20220311 14:28:48.215"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:43.835" endtime="20220311 14:28:48.215"/>
+</kw>
+<kw name="Then sou encaminhado para a pagina &quot;${textToCheck}&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<kw name="confirmo que o texto &quot;${text}&quot; esta presente" library="commonPage" sourcename="confirmo que o texto &quot;${text}&quot; esta presente">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>timeout=None</arg>
+<arg>error=None</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220311 14:28:48.217" endtime="20220311 14:28:48.235"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:48.216" endtime="20220311 14:28:48.235"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:48.216" endtime="20220311 14:28:48.236"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:43.834" endtime="20220311 14:28:48.236"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:43.833" endtime="20220311 14:28:48.237"/>
+</test>
+<test id="s1-t6" name="Scenario1: Navigation Test">
+<kw name="Acessar menu" library="navigationPage">
+<arg>Validação de Certificado</arg>
+<arg>Validação de Certificado</arg>
+<kw name="When clico na opção do menu &quot;${menuOption}&quot;" library="navigationPage" sourcename="clico na opção do menu &quot;${menuOption}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220311 14:28:48.243" endtime="20220311 14:28:48.273"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuOptionLink}\[contains(text(), '${menuOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220311 14:28:48.273" level="INFO">Clicking element 'xpath://nav//ul[@id='menu-primary-menu']//span[@class='menu-item-text'][contains(text(), 'Validação de Certificado')]'.</msg>
+<status status="PASS" starttime="20220311 14:28:48.273" endtime="20220311 14:28:54.944"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:48.242" endtime="20220311 14:28:54.945"/>
+</kw>
+<kw name="Then sou encaminhado para a pagina &quot;${textToCheck}&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<kw name="confirmo que o texto &quot;${text}&quot; esta presente" library="commonPage" sourcename="confirmo que o texto &quot;${text}&quot; esta presente">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>timeout=None</arg>
+<arg>error=None</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220311 14:28:54.946" endtime="20220311 14:28:54.963"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:54.945" endtime="20220311 14:28:54.963"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:54.945" endtime="20220311 14:28:54.963"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:48.241" endtime="20220311 14:28:54.963"/>
+</kw>
+<status status="PASS" starttime="20220311 14:28:48.239" endtime="20220311 14:28:54.964"/>
 </test>
 <kw name="Finish Session" library="base" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220311 09:56:46.188" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220311 09:56:45.902" endtime="20220311 09:56:46.188"/>
+<msg timestamp="20220311 14:28:55.394" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-90.png"&gt;&lt;img src="selenium-screenshot-90.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220311 14:28:54.967" endtime="20220311 14:28:55.394"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220311 09:56:46.189" endtime="20220311 09:56:48.400"/>
+<status status="PASS" starttime="20220311 14:28:55.395" endtime="20220311 14:28:57.711"/>
 </kw>
-<status status="PASS" starttime="20220311 09:56:45.902" endtime="20220311 09:56:48.400"/>
+<status status="PASS" starttime="20220311 14:28:54.966" endtime="20220311 14:28:57.711"/>
 </kw>
-<status status="PASS" starttime="20220311 09:54:56.733" endtime="20220311 09:56:48.400"/>
+<status status="FAIL" starttime="20220311 14:28:22.921" endtime="20220311 14:28:57.711"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">doing</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="homeTest">homeTest</stat>
+<stat pass="5" fail="1" skip="0" id="s1" name="navigationTest">navigationTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220311 09:54:56.956" level="WARN">Imported resource file 'C:\RobotFramework\projetoRobotCursoEmVideo\Resources\Pages\navigationPage.robot' is empty.</msg>
-<msg timestamp="20220311 09:54:56.958" level="WARN">Imported resource file 'C:\RobotFramework\projetoRobotCursoEmVideo\Resources\Pages\cursosPage.robot' is empty.</msg>
+<msg timestamp="20220311 14:28:23.186" level="WARN">Imported resource file 'C:\RobotFramework\projetoRobotCursoEmVideo\Resources\Pages\cursosPage.robot' is empty.</msg>
+<msg timestamp="20220311 14:28:33.591" level="WARN">Multiple test cases with name 'Scenario1: Navigation Test' executed in test suite 'navigationTest'.</msg>
+<msg timestamp="20220311 14:28:33.977" level="WARN">Multiple test cases with name 'Scenario1: Navigation Test' executed in test suite 'navigationTest'.</msg>
+<msg timestamp="20220311 14:28:38.700" level="WARN">Multiple test cases with name 'Scenario1: Navigation Test' executed in test suite 'navigationTest'.</msg>
+<msg timestamp="20220311 14:28:43.833" level="WARN">Multiple test cases with name 'Scenario1: Navigation Test' executed in test suite 'navigationTest'.</msg>
+<msg timestamp="20220311 14:28:48.239" level="WARN">Multiple test cases with name 'Scenario1: Navigation Test' executed in test suite 'navigationTest'.</msg>
 </errors>
 </robot>
