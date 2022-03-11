@@ -1,4 +1,4 @@
-# robotForFun 
+# Projeto de automação para Curso em Video 
  
 # Author: Telmo Rodrigues Correa
 
