@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20220311 09:22:30.221" rpa="false" schemaversion="2">
+<suite id="s1" name="homeTest" source="C:\RobotFramework\projetoRobotCursoEmVideo\Tests\homeTest.robot">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220311 09:22:30.481" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220311 09:22:30.481" endtime="20220311 09:22:32.375"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220311 09:22:32.376" level="INFO">Opening url 'https://www.cursoemvideo.com'</msg>
+<status status="PASS" starttime="20220311 09:22:32.376" endtime="20220311 09:22:37.561"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>${WIDTH}</arg>
+<arg>${HEIGHT}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220311 09:22:37.561" endtime="20220311 09:22:37.683"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220311 09:22:37.683" endtime="20220311 09:22:37.685"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220311 09:22:37.685" endtime="20220311 09:22:37.687"/>
+</kw>
+<status status="PASS" starttime="20220311 09:22:30.481" endtime="20220311 09:22:37.687"/>
+</kw>
+<test id="s1-t1" name="Scenario2: check home page buttons">
+<kw name="When clico no botão &quot;Começar!&quot;" library="homePage" sourcename="clico no botão &quot;${buttonText}&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>link:${buttonText}</arg>
+<arg>modifier=False</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220311 09:22:37.690" level="INFO">Clicking link 'link:Começar!'.</msg>
+<status status="PASS" starttime="20220311 09:22:37.689" endtime="20220311 09:22:44.119"/>
+</kw>
+<status status="PASS" starttime="20220311 09:22:37.689" endtime="20220311 09:22:44.120"/>
+</kw>
+<kw name="Then sou encaminhado para a pagina &quot;Cursos&quot;" library="commonPage" sourcename="sou encaminhado para a pagina &quot;${text}&quot;">
+<kw name="confirmo que o texto &quot;${text}&quot; esta presente" library="homePage" sourcename="confirmo que o texto &quot;${text}&quot; esta presente">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>timeout=None</arg>
+<arg>error=None</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220311 09:22:44.122" endtime="20220311 09:22:44.150"/>
+</kw>
+<status status="PASS" starttime="20220311 09:22:44.122" endtime="20220311 09:22:44.151"/>
+</kw>
+<status status="PASS" starttime="20220311 09:22:44.121" endtime="20220311 09:22:44.151"/>
+</kw>
+<tag>doing</tag>
+<status status="PASS" starttime="20220311 09:22:37.687" endtime="20220311 09:22:44.152"/>
+</test>
+<kw name="Finish Session" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220311 09:22:44.459" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220311 09:22:44.155" endtime="20220311 09:22:44.460"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220311 09:22:44.460" endtime="20220311 09:22:46.827"/>
+</kw>
+<status status="PASS" starttime="20220311 09:22:44.154" endtime="20220311 09:22:46.827"/>
+</kw>
+<status status="PASS" starttime="20220311 09:22:30.222" endtime="20220311 09:22:46.827"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">doing</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="homeTest">homeTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220311 09:22:30.475" level="WARN">Imported resource file 'C:\RobotFramework\projetoRobotCursoEmVideo\Resources\Pages\navigationPage.robot' is empty.</msg>
+<msg timestamp="20220311 09:22:30.478" level="WARN">Imported resource file 'C:\RobotFramework\projetoRobotCursoEmVideo\Resources\Pages\cursosPage.robot' is empty.</msg>
+</errors>
+</robot>
