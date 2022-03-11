@@ -11,7 +11,10 @@ Scenario1: Test home page
     And confirmo que o texto "Começar!" esta presente
 
 Scenario2: check home page buttons
-    [Tags]    doing
     When clico no botão "Começar!"
     Then sou encaminhado para a pagina "Cursos"
 
+Scenario2: check home page buttons
+    [Tags]    doing
+    When clico no botão "Quero ser um Apoiador!"
+    Then sou encaminhado para a pagina "Apoie"
