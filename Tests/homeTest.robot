@@ -8,12 +8,9 @@ Test Teardown              Finish Session
 
 ***Test Cases***
 Scenario1: Test home page
+    [Tags]      Test
     Then verifico se estou presente na Home Page
-    And confirmo que o menu de navegação esta presente 
-    And confirmo que o rodape esta presente
-    And confirmo que o texto "Começar!" esta presente
-    And verifico a area dos patrocinadores
-    And verifico a paginação na sessao de mensagens 
+    And confirmo todos os itens da Home Page
 
 Scenario2: check home page buttons - Começar
     When clico no botão "Começar!"
