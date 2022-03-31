@@ -21,3 +21,11 @@ verifico a paginação na sessao de mensagens
     SeleniumLibrary.Wait Until Element Is Visible 	 locator=${page2Slider}${sliderActive} 	 timeout=None 	 error=None
     SeleniumLibrary.Click Element 	 locator=${page3Slider} 	 modifier=False 	 action_chain=False
     SeleniumLibrary.Wait Until Element Is Visible 	 locator=${page3Slider}${sliderActive} 	 timeout=None 	 error=None
+
+And confirmo todos os itens da Home Page
+    And confirmo que o menu de navegação esta presente 
+    And confirmo que o rodape esta presente
+    And confirmo que o texto "Começar!" esta presente
+    And verifico a area dos patrocinadores
+    # And verifico a paginação na sessao de mensagens 
+    And verifico o botão "Quero ser um Apoiador!"

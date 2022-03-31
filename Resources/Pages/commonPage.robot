@@ -3,6 +3,8 @@
 ${cookieAcceptButton}         id:cn-accept-cookie
 ${navigationMenu}             id:menu-primary-menu
 ${footer}                     //footer
+${button}                   css:a[role=button]
+
 
 *** Keywords ***
 sou encaminhado para a pagina "${text}"
@@ -24,3 +26,6 @@ confirmo que o menu de navegação esta presente
 
 confirmo que o rodape esta presente
     SeleniumLibrary.Wait Until Element Is Visible 	 locator=${footer} 	 timeout=None 	 error=None
+
+verifico o botão "${buttonText}"
+    SeleniumLibrary.Wait Until Element Is Visible 	 locator=${button}\[aria-label='${buttonText}'] 	 timeout=None 	 error=None
